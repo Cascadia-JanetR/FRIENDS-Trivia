@@ -1,7 +1,7 @@
 FRIENDS-Trivia
 ==============
 
-Mobile Trivia Game App for the popular TV show "FRIENDS"
+Mobile Trivia Game for the popular TV show "FRIENDS"
 
 
 ============
