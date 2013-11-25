@@ -32,7 +32,7 @@ public class LevelStart extends Activity {
 		
 		// Put curLevel as startButton text (Example: "Level 2")
 		Button startButton = (Button) findViewById(R.id.startButton);
-		startButton.setText("Level " + curLevel);
+		startButton.setText("Start Level " + curLevel);
 	}// end onCreate
 
 }// end class
