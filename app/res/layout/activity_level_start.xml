@@ -21,11 +21,10 @@
         android:visibility="invisible" />
 
         <Button
-            android:id="@+id/playButton"
+            android:id="@+id/startButton"
             android:layout_width="@dimen/start_btn_width"
             android:layout_height="@dimen/start_btn_height"
-            android:layout_weight="0.20"
-            android:text="@string/play" />
+            android:layout_weight="0.20" />
 
         <View
         android:layout_width="0dp"
