@@ -40,7 +40,7 @@ public final class R {
         public static final int playButton=0x7f09000b;
         public static final int playGameLayout=0x7f090001;
         public static final int questionBgImageView=0x7f090003;
-        public static final int questionBottomRelativeLayout=0x7f090005;
+        public static final int questionBottomLinearLayout=0x7f090005;
         public static final int questionTextView=0x7f090004;
         public static final int questionTopRelativeLayout=0x7f090002;
         public static final int startButton=0x7f090000;

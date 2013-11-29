@@ -1,3 +1,4 @@
+<!-- Layout for game screen. Text for question and buttons is added programatically. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/playGameLayout"
@@ -17,56 +18,66 @@
 
         <ImageView
             android:id="@+id/questionBgImageView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
             android:contentDescription="@string/questionBackgroundDescription"
+            android:scaleType="fitXY"
             android:src="@drawable/question_bg_01" />
 
         <TextView
             android:id="@+id/questionTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_alignParentLeft="false"
+            android:layout_centerVertical="true"
             android:gravity="center"
-            android:shadowColor="#333"
-            android:shadowDx="2"
+            android:shadowColor="#ccc"
+            android:shadowDx="-2"
             android:shadowDy="2"
-            android:text="What was the name of Ross&apos; pet monkey?"
+            android:shadowRadius="1"
             android:textColor="@color/questionColor"
-            android:textSize="30sp" />
+            android:textSize="27sp" />
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/questionBottomRelativeLayout"
+    <LinearLayout
+        android:id="@+id/questionBottomLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin" >
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
 
         <Button
             android:id="@+id/answerButton1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/answerButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/answerButton1" />
+            android:layout_marginTop="5dp"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/answerButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/answerButton2" />
+            android:layout_marginTop="5dp"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/answerButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/answerButton3" />
+            android:layout_marginTop="5dp"
+            android:layout_weight="1" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>
