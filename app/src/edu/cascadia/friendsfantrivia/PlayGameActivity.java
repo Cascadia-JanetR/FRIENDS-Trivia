@@ -13,22 +13,24 @@ import android.view.Menu;
 public class PlayGameActivity extends Activity {
 	
 	// Instance variables
-	int curLevel;
+	int curLevel; // level player is currently on
+	int curScore; // player's current score
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_play_game);
 		
-		// Get the current level from the intent
-		// curLevel will be -1 if there's a problem
+		// Get data from intent
+		// Will be -1 if there's a problem
 		curLevel = getIntent().getIntExtra("curLevel", -1);
+		curScore = getIntent().getIntExtra("curScore", -1);
 		// Test toast - make sure we got the correct current level
 		//Toast.makeText(this, Integer.toString(curLevel), Toast.LENGTH_SHORT).show();
 		
 		// Put curLevel as the title in the action bar
 		setTitle("Level " + curLevel);
-	}
+	}// end onCreate
 
 //  No menu for right now
 //	@Override

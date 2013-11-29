@@ -13,5 +13,6 @@
     <string name="title_activity_level_start">LevelStart</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_play_game">PlayGameActivity</string>
+    <string name="questionBackgroundDescription">question background</string>
 
 </resources>

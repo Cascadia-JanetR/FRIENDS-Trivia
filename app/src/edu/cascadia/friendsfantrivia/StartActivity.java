@@ -17,6 +17,8 @@ public class StartActivity extends Activity {
 	
 	// Instance variables
 	private int curLevel; // the current level the player is on (starts at 1)
+	private int curScore; // player's current score
+	private int highScore; // player's best score
 
 	// This is called when the app first starts
 	@Override
@@ -25,6 +27,7 @@ public class StartActivity extends Activity {
 		setContentView(R.layout.activity_start);
 		
 		curLevel = 1; // Player always starts at level 1
+		curScore = 0; // Player starts with a score of 0
 		
 		// Add OnClickListener to playButton
 		Button playButton = (Button) findViewById(R.id.playButton);
@@ -43,8 +46,9 @@ public class StartActivity extends Activity {
 	public void startGame(View v) {
 		Intent intent = new Intent(this, LevelStart.class); // create a new intent
 		intent.putExtra("curLevel", curLevel); // add current level into the intent
+		intent.putExtra("curScore", curScore); // add current score to the intent
 		startActivity(intent); // start the LevelStart activity
-	}// end startGame
+	}// end startGame method
 	
 }// end class
 
