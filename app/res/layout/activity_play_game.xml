@@ -37,7 +37,6 @@
             android:shadowDx="-1"
             android:shadowDy="1"
             android:shadowRadius="1"
-            android:text="What&apos;s Monica&apos;s blah blah blah?"
             android:textColor="@color/questionColor"
             android:textSize="27sp" />
 
@@ -100,35 +99,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered" />
+            android:src="@drawable/ic_not_answered"
+            android:contentDescription="question progress" />
 
         <ImageView
             android:id="@+id/progressAnswer2ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered" />
+            android:src="@drawable/ic_not_answered"
+            android:contentDescription="question progress" />
 
         <ImageView
             android:id="@+id/progressAnswer3ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered" />
+            android:src="@drawable/ic_not_answered"
+            android:contentDescription="question progress" />
 
         <ImageView
             android:id="@+id/progressAnswer4ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered" />
+            android:src="@drawable/ic_not_answered"
+            android:contentDescription="question progress" />
 
         <ImageView
             android:id="@+id/progressAnswer5ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered" />
+            android:src="@drawable/ic_not_answered"
+            android:contentDescription="question progress" />
 
     </LinearLayout>
 
