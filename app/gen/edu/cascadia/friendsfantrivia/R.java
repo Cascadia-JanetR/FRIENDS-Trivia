@@ -26,11 +26,6 @@ public final class R {
         public static final int start_btn_width=0x7f050002;
     }
     public static final class drawable {
-        public static final int ic_correct=0x7f020000;
-        public static final int ic_incorrect=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int ic_not_answered=0x7f020003;
-        public static final int question_bg_01=0x7f020004;
         public static final int app_icon=0x7f020000;
         public static final int front=0x7f020001;
         public static final int ic_app=0x7f020002;
