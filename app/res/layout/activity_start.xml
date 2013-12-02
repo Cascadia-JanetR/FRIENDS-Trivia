@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent" 
               android:layout_height="fill_parent" 
-              android:orientation="vertical" >
+              android:orientation="vertical" 
+              android:background="@drawable/front">
 
     <View
         android:id="@+id/blankView01"
@@ -10,13 +11,13 @@
         android:visibility="invisible"
         android:layout_weight="80" />
 
-	<Button
-	    android:id="@+id/playButton"
-	    android:layout_width="@dimen/start_btn_width"
-	    android:layout_height="@dimen/start_btn_height"
-	    android:layout_weight="1"
-	    android:layout_gravity="center_horizontal"
-	    android:text="@string/play" />
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="@dimen/start_btn_width"
+        android:layout_height="@dimen/start_btn_height"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/play" />
 
 	<View
 	    android:id="@+id/blankView02"
