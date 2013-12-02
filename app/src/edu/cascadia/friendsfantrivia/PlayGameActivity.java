@@ -25,11 +25,12 @@ public class PlayGameActivity extends Activity {
 		// Will be -1 if there's a problem
 		curLevel = getIntent().getIntExtra("curLevel", -1);
 		curScore = getIntent().getIntExtra("curScore", -1);
-		// Test toast - make sure we got the correct current level
-		//Toast.makeText(this, Integer.toString(curLevel), Toast.LENGTH_SHORT).show();
 		
 		// Put curLevel as the title in the action bar
 		setTitle("Level " + curLevel);
+		
+		// Create a new Quiz using the current level
+		Quiz curQuiz = new Quiz(curLevel);
 	}// end onCreate
 
 //  No menu for right now
