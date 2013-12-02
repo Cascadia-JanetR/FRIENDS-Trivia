@@ -2,7 +2,8 @@
               android:layout_width="fill_parent" 
               android:layout_height="fill_parent" 
               android:orientation="vertical"
-              android:layout_weight="1" >
+              android:layout_weight="1"
+              android:background="@drawable/level1" >
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -23,8 +24,8 @@
         <Button
             android:id="@+id/startButton"
             android:layout_width="@dimen/start_btn_width"
-            android:layout_height="@dimen/start_btn_height"
-            android:layout_weight="0.20" />
+            android:layout_height="158dp"
+            android:layout_weight="0.69" />
 
         <View
         android:layout_width="0dp"
