@@ -11,13 +11,16 @@
         android:visibility="invisible"
         android:layout_weight="80" />
 
-    <Button
+    <ImageButton
         android:id="@+id/playButton"
         android:layout_width="@dimen/start_btn_width"
         android:layout_height="@dimen/start_btn_height"
-        android:layout_weight="1"
         android:layout_gravity="center_horizontal"
-        android:text="@string/play" />
+        android:layout_weight="1"
+        android:background="#000"
+        android:contentDescription="@string/play"
+        android:scaleType="fitXY"
+        android:src="@drawable/app_icon" />
 
 	<View
 	    android:id="@+id/blankView02"

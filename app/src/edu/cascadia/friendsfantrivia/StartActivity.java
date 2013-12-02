@@ -11,7 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class StartActivity extends Activity {
 	
@@ -30,7 +30,7 @@ public class StartActivity extends Activity {
 		curScore = 0; // Player starts with a score of 0
 		
 		// Add OnClickListener to playButton
-		Button playButton = (Button) findViewById(R.id.playButton);
+		ImageButton playButton = (ImageButton) findViewById(R.id.playButton);
 		playButton.setOnClickListener(playButtonListener);
 	}// end onCreate
 	
