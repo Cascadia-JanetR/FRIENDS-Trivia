@@ -6,15 +6,26 @@
 
 package edu.cascadia.friendsfantrivia;
 
-import android.os.Bundle;
+import java.util.ArrayList;
+
 import android.app.Activity;
-import android.view.Menu;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class PlayGameActivity extends Activity {
 	
 	// Instance variables
-	int curLevel; // level player is currently on
-	int curScore; // player's current score
+	private int curLevel; // level player is currently on
+	private int curScore; // player's current score
+	private Quiz curQuiz; // the current Quiz the user is taking
+	private Question curQuestion; // the current Question the user is on
+	private ArrayList<String> possibleAnswers; // the list of possible answers to curQuestion
+	private TextView questionTextView; // the TextView that displays current question
+	private Button answerButton1; // the first answer Button (top)
+	private Button answerButton2; // the 2nd answer Button
+	private Button answerButton3; // the 3rd answer Button
+	private Button answerButton4; // the 4th answer Button (bottom)
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +41,26 @@ public class PlayGameActivity extends Activity {
 		setTitle("Level " + curLevel);
 		
 		// Create a new Quiz using the current level
-		Quiz curQuiz = new Quiz(curLevel);
+		curQuiz = new Quiz(curLevel);
+		
+		// Get the current Question
+		curQuestion = curQuiz.getNextQuestion();
+		// Get the list of possible answers to the current question
+		possibleAnswers = new ArrayList<String>(curQuestion.getAllShuffledAnswers());
+		
+		// Display the first question in questionTextView
+		questionTextView = (TextView)findViewById(R.id.questionTextView);
+		questionTextView.setText(curQuestion.getQuestionString());
+		
+		// Display the answers in the answer buttons
+		answerButton1 = (Button)findViewById(R.id.answerButton1);
+		answerButton1.setText(possibleAnswers.get(0));
+		answerButton2 = (Button)findViewById(R.id.answerButton2);
+		answerButton2.setText(possibleAnswers.get(1));
+		answerButton3 = (Button)findViewById(R.id.answerButton3);
+		answerButton3.setText(possibleAnswers.get(2));
+		answerButton4 = (Button)findViewById(R.id.answerButton4);
+		answerButton4.setText(possibleAnswers.get(3));
 	}// end onCreate
 
 //  No menu for right now

@@ -34,7 +34,7 @@ public class Question {
 	 * Get the question String for this Question.
 	 * @return question String.
 	 */
-	public String getQuestion() {
+	public String getQuestionString() {
 		return question;
 	}
 	

@@ -20,6 +20,7 @@ public class Quiz {
 	 * @param curLevel - The current level that the player is on.
 	 */
 	public Quiz(int curLevel) {
+		questions = new ArrayList<Question>(); // create new ArrayList of Questions
 		generateQuestions(curLevel); // generate 5 questions from the current level
 	}
 	
@@ -139,4 +140,25 @@ public class Quiz {
 		// Add the Question object to the questions ArrayList
 		questions.add(new Question(question, answer, incorrectAnswers));
 	}
-}
+	
+	/**
+	 * Gets the next Question object from the list.
+	 * @return the first Question object in the list
+	 *         this will return null if the list is empty
+	 */
+	public Question getNextQuestion() {
+		if (questions.isEmpty()) {
+			return null;
+		}
+		return questions.remove(0); // remove a Question from the list and return it
+	}
+	
+}// end Quiz class
+
+/*
+ * Friends Fan Trivia app
+ * 
+ * 
+ * Cascadia Community College - BIT 272 (Mobile App Development) - Fall 2013
+ * Ben Harrison, Janet Rasque, Henry NGoy
+ */
