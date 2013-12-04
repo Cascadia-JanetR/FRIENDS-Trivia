@@ -15,5 +15,8 @@
     <string name="title_activity_play_game">PlayGameActivity</string>
     <string name="questionBackgroundDescription">question background</string>
     <string name="questionProgress">question progress</string>
+    <string name="title_activity_game_over">Game Over!</string>
+    <string name="game_over">Game Over!</string>
+    <string name="your_score">Your Score: </string>
 
 </resources>

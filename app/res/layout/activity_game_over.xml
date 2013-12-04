@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="gameOverRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".GameOverActivity" >
+
+    <TextView
+        android:id="@+id/gameOverTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/game_over_textview_margintop"
+        android:text="@string/game_over"
+        android:textSize="@dimen/game_over_textview_size" />
+
+    <TextView
+        android:id="@+id/yourScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gameOverTextView"
+        android:layout_centerHorizontal="true"
+        android:text="@string/your_score"
+        android:textSize="@dimen/your_score_textview_size" />
+
+    <TextView
+        android:id="@+id/yourScoreValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/yourScoreTextView"
+        android:layout_alignBottom="@+id/yourScoreTextView"
+        android:layout_toRightOf="@+id/yourScoreTextView"
+        android:text="350"
+        android:textSize="@dimen/your_score_textview_size" />
+
+</RelativeLayout>

@@ -33,6 +33,14 @@
             android:label="@string/title_activity_play_game"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="edu.cascadia.friendsfantrivia.GameOverActivity"
+            android:label="@string/title_activity_game_over"
+            android:parentActivityName="StartActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="StartActivity" />
+        </activity>
     </application>
 
 </manifest>
