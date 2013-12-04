@@ -31,31 +31,31 @@ public class Quiz {
 	public void generateQuestions(int curLevel) {
 		switch (curLevel) {
 			// If current level is 1, add 5 level-one questions:
-			case 1: addNewQuestion("Question1 text",
-								   "Question1 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question2 text",
-								   "Question2 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question3 text",
-								   "Question3 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question4 text",
-								   "Question4 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question5 text",
-								   "Question5 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
+			case 1: addNewQuestion("How many babies does Phoebe have?",
+								   "Three",
+								   "Two",
+								   "One",
+								   "Zero");
+					addNewQuestion("How many kids does Ross have?",
+								   "2",
+								   "3",
+								   "1",
+								   "0");
+					addNewQuestion("Why can't Chandler dance at his wedding?",
+								   "His shoes are too slippery",
+								   "He doesn't know how",
+								   "No dance partner",
+								   "He didn't like the music");
+					addNewQuestion("Whose pants does Joey wear as eating pants?",
+								   "Phoebe's",
+								   "Ross's",
+								   "Chandler's",
+								   "Rachel's");
+					addNewQuestion("Monica has how many catagories of towels?",
+								   "11",
+								   "7",
+								   "5",
+								   "9");
 					Collections.shuffle(questions); // Shuffle the list of questions
 					break;
 			
