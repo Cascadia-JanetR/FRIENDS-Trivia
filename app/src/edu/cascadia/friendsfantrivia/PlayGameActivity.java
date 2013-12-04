@@ -24,7 +24,10 @@ public class PlayGameActivity extends Activity {
 	private boolean gameOver; // boolean to determine if the game is over yet
 	private Question curQuestion; // the current Question the user is on
 	private ArrayList<String> possibleAnswers; // the list of possible answers to curQuestion
-	private TextView questionTextView; // the TextView that displays current question
+	
+	// UI variables
+	private TextView pointValueTextView; // TextView that displays the point value
+	private TextView questionTextView; // TextView that displays current question
 	private Button answerButton1; // the first answer Button (top)
 	private Button answerButton2; // the 2nd answer Button
 	private Button answerButton3; // the 3rd answer Button
@@ -57,6 +60,14 @@ public class PlayGameActivity extends Activity {
 		// Set the current question number to 1
 		curQuestionNum = 1;
 		
+		// Get all the UI elements
+		pointValueTextView = (TextView)findViewById(R.id.pointValueTextView); // point value
+		questionTextView = (TextView)findViewById(R.id.questionTextView); // question text
+		answerButton1 = (Button)findViewById(R.id.answerButton1); // top answer button
+		answerButton2 = (Button)findViewById(R.id.answerButton2);
+		answerButton3 = (Button)findViewById(R.id.answerButton3);
+		answerButton4 = (Button)findViewById(R.id.answerButton4); // bottom answer button
+		
 		// Load the first question
 		loadNextQuestion();
 	}// end onCreate
@@ -68,18 +79,16 @@ public class PlayGameActivity extends Activity {
 		// Get the list of possible answers to the current question
 		possibleAnswers = new ArrayList<String>(curQuestion.getAllShuffledAnswers());
 		
+		// Display point value in upper-left
+		pointValueTextView.setText(getPointValue(curLevel) + " points");
+		
 		// Display the question in questionTextView
-		questionTextView = (TextView)findViewById(R.id.questionTextView);
 		questionTextView.setText(curQuestion.getQuestionString());
 		
 		// Display the answers in the answer buttons
-		answerButton1 = (Button)findViewById(R.id.answerButton1);
 		answerButton1.setText(possibleAnswers.get(0));
-		answerButton2 = (Button)findViewById(R.id.answerButton2);
 		answerButton2.setText(possibleAnswers.get(1));
-		answerButton3 = (Button)findViewById(R.id.answerButton3);
 		answerButton3.setText(possibleAnswers.get(2));
-		answerButton4 = (Button)findViewById(R.id.answerButton4);
 		answerButton4.setText(possibleAnswers.get(3));
 	}// end loadNextQuestion
 	
@@ -110,6 +119,18 @@ public class PlayGameActivity extends Activity {
 			return true;
 		return false;
 	}// end gameOver
+	
+	// Method to determine the point value of the current question
+	public int getPointValue(int curLevel) {
+		if (curLevel == 1)
+			return LEVEL_1_PTS;
+		if (curLevel == 2)
+			return LEVEL_2_PTS;
+		if (curLevel == 3)
+			return LEVEL_3_PTS;
+		// if we get here, there was a problem, return -1
+		return -1;
+	}
 
 //  No menu for right now
 //	@Override

@@ -1,4 +1,4 @@
-<!-- Layout for game screen. Text for question and buttons is added programatically. -->
+<!-- Layout for game screen. Text is added programmatically. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/playGameLayout"
@@ -39,6 +39,15 @@
             android:shadowRadius="1"
             android:textColor="@color/questionColor"
             android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/pointValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp" />
 
     </RelativeLayout>
 
