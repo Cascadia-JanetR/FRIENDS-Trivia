@@ -20,16 +20,17 @@ public class LevelStart extends Activity {
 	// Instance variables
 	private int curLevel; // The level player is currently on
 	private int curScore; // Player's current score
+	private int highScore; // Player's high score
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_level_start);
 		
-		// Get the current level and score from the intent
-		// curLevel/curScore will be -1 if there's a problem
+		// Get the data from the intent. Values will be -1 if there's a problem
 		curLevel = getIntent().getIntExtra("curLevel", -1);
 		curScore = getIntent().getIntExtra("curScore", -1);
+		highScore = getIntent().getIntExtra("highScore", -1);
 		
 		// Put curLevel as the title in the action bar
 		setTitle("Level " + curLevel);
@@ -49,10 +50,12 @@ public class LevelStart extends Activity {
 		}
 	};// end playButtonListener
 	
+	// Starts the next level (goes to PlayGameActivity)
 	public void startNextLevel(View v) {
 		Intent intent = new Intent(this, PlayGameActivity.class); // create a new intent
 		intent.putExtra("curLevel", curLevel); // add current level to the intent
 		intent.putExtra("curScore", curScore); // add current score to the intent
+		intent.putExtra("highScore", highScore); // add high score to the intent
 		startActivity(intent); // switch to PlayGameActivity
 	}// end startNextLevel method
 
