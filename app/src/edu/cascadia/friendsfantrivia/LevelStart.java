@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
 public class LevelStart extends Activity {
 	
@@ -21,6 +21,9 @@ public class LevelStart extends Activity {
 	private int curLevel; // The level player is currently on
 	private int curScore; // Player's current score
 	private int highScore; // Player's high score
+	
+	// UI elements
+	private LinearLayout levelStartRootLayout; // Top-level layout (set background)
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +39,21 @@ public class LevelStart extends Activity {
 		setTitle("Level " + curLevel);
 		
 		// Put curLevel as startButton text (Example: "Level 2")
-		Button startButton = (Button) findViewById(R.id.startButton);
+		Button startButton = (Button)findViewById(R.id.startButton);
 		startButton.setText("Start Level " + curLevel);
+		
 		// Add OnClickListener to "Start Level x" button
 		startButton.setOnClickListener(startLevelButtonListener);
+		
+		// Show the correct background image for the next level
+		levelStartRootLayout = (LinearLayout)findViewById(R.id.levelStartRootLayout);
+		if (curLevel == 1) {
+			levelStartRootLayout.setBackgroundResource(R.drawable.level1);
+		} else if (curLevel == 2) {
+			levelStartRootLayout.setBackgroundResource(R.drawable.level2);
+		} else { // curLevel == 3
+			levelStartRootLayout.setBackgroundResource(R.drawable.level3);
+		}
 	}// end onCreate
 	
 	// OnClickListener for "Play!" button. Calls startGame method.

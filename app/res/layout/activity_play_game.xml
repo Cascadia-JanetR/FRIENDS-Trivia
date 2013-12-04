@@ -1,4 +1,4 @@
-<!-- Layout for game screen. Text is added programmatically. -->
+<!-- Layout for game screen. Text is and question progress icons are added programmatically. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/playGameLayout"
@@ -76,28 +76,32 @@
             android:id="@+id/answerButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="answerQuestion" />
 
         <Button
             android:id="@+id/answerButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="answerQuestion" />
 
         <Button
             android:id="@+id/answerButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="answerQuestion" />
 
         <Button
             android:id="@+id/answerButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="answerQuestion" />
 
     </LinearLayout>
 
@@ -118,40 +122,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered"
-            android:contentDescription="question progress" />
+            android:contentDescription="@string/questionProgress" />
 
         <ImageView
             android:id="@+id/progressAnswer2ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered"
-            android:contentDescription="question progress" />
+            android:contentDescription="@string/questionProgress" />
 
         <ImageView
             android:id="@+id/progressAnswer3ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered"
-            android:contentDescription="question progress" />
+            android:contentDescription="@string/questionProgress" />
 
         <ImageView
             android:id="@+id/progressAnswer4ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered"
-            android:contentDescription="question progress" />
+            android:contentDescription="@string/questionProgress" />
 
         <ImageView
             android:id="@+id/progressAnswer5ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_not_answered"
-            android:contentDescription="question progress" />
+            android:contentDescription="@string/questionProgress" />
 
     </LinearLayout>
 

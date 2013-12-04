@@ -40,6 +40,8 @@ public class StartActivity extends Activity {
 		// Add OnClickListener to playButton
 		ImageButton playButton = (ImageButton) findViewById(R.id.playButton);
 		playButton.setOnClickListener(playButtonListener);
+		
+		// TODO: Play Friends theme music
 	}// end onCreate
 	
 	// OnClickListener for "Play!" button. Calls startGame method.
