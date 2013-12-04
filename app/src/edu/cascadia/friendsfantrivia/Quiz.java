@@ -60,31 +60,31 @@ public class Quiz {
 					break;
 			
 			// If current level is 2, add 5 level-two questions:
-			case 2: addNewQuestion("Question1 text",
-								   "Question1 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question2 text",
-								   "Question2 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question3 text",
-								   "Question3 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question4 text",
-								   "Question4 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question5 text",
-								   "Question5 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
+			case 2: addNewQuestion("Ross's first wife was?",
+								   "Carol",
+								   "Emily",
+								   "Rachel",
+								   "Julie");
+					addNewQuestion("Who is Ross's second wife?",
+								   "Emily",
+								   "Carol",
+								   "Rachel",
+								   "Julie");
+					addNewQuestion("How many times has Ross been divorced?",
+								   "3 times",
+								   "2 times",
+								   "4 times",
+								   "1 time");
+					addNewQuestion("What game show does Joey audition to be the host of?",
+								   "Bamboozled",
+								   "Fireball",
+								   "Price is Right",
+								   "Wango Tango");
+					addNewQuestion("Who's name is on the TV Guide delivered to Joey and Chandler's apartment?",
+								   "Miss Chanandler Bong",
+								   "Mr. Chandler Bing",
+								   "Joey Tribbani",
+								   "Monica Gellar");
 					Collections.shuffle(questions); // Shuffle the list of questions
 					break;
 				
