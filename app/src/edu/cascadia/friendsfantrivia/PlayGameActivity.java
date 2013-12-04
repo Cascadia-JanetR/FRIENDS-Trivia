@@ -27,6 +27,7 @@ public class PlayGameActivity extends Activity {
 	
 	// UI variables
 	private TextView pointValueTextView; // TextView that displays the point value
+	private TextView playerScoreTextView; // TextView that displays the player's score
 	private TextView questionTextView; // TextView that displays current question
 	private Button answerButton1; // the first answer Button (top)
 	private Button answerButton2; // the 2nd answer Button
@@ -62,6 +63,7 @@ public class PlayGameActivity extends Activity {
 		
 		// Get all the UI elements
 		pointValueTextView = (TextView)findViewById(R.id.pointValueTextView); // point value
+		playerScoreTextView = (TextView)findViewById(R.id.playerScoreTextView); // player's score
 		questionTextView = (TextView)findViewById(R.id.questionTextView); // question text
 		answerButton1 = (Button)findViewById(R.id.answerButton1); // top answer button
 		answerButton2 = (Button)findViewById(R.id.answerButton2);
@@ -79,8 +81,11 @@ public class PlayGameActivity extends Activity {
 		// Get the list of possible answers to the current question
 		possibleAnswers = new ArrayList<String>(curQuestion.getAllShuffledAnswers());
 		
-		// Display point value in upper-left
+		// Display point value (in upper-left)
 		pointValueTextView.setText(getPointValue(curLevel) + " points");
+		
+		// Display player's score (in upper-right)
+		playerScoreTextView.setText("Score: " + curScore);
 		
 		// Display the question in questionTextView
 		questionTextView.setText(curQuestion.getQuestionString());
@@ -94,7 +99,7 @@ public class PlayGameActivity extends Activity {
 	
 	// Method to handle answering a question (when user taps an answer button)
 	public void answerQuestion(Button answerButton) {
-		// Handle correct/incorrect answer
+		// Handle correct/incorrect answer (color, sound, vibrate?, update icon at bottom)
 		// Check if game is over, if so, check for new high score and go to GameOverActivity
 		// Check if level is over, if so, go to LevelStart Activity
 		// Otherwise, increment curQuestion and load the next question

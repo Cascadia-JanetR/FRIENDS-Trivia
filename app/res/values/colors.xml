@@ -1,4 +1,5 @@
-
-    <resources>
-        <color name="questionColor">#fff</color>
-    </resources>
+<resources>
+    <color name="questionColor">#fff</color>
+    <color name="playerScoreColor">#ddd</color>
+    <color name="pointValueColor">#7b93af</color>
+</resources>

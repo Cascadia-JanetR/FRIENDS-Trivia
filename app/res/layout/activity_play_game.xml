@@ -47,7 +47,17 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:textColor="@color/pointValueColor" />
+
+        <TextView
+            android:id="@+id/playerScoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/pointValueTextView"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/playerScoreColor" />
 
     </RelativeLayout>
 
