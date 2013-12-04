@@ -89,31 +89,31 @@ public class Quiz {
 					break;
 				
 			// If current level is 3, add 5 level-three questions:
-			case 3: addNewQuestion("Question1 text",
-								   "Question1 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question2 text",
-								   "Question2 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question3 text",
-								   "Question3 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question4 text",
-								   "Question4 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
-					addNewQuestion("Question5 text",
-								   "Question5 answer",
-								   "Incorrect answer 1",
-								   "Incorrect answer 2",
-								   "Incorrect answer 3");
+			case 3: addNewQuestion("In ten seasons, who didn't live in Monica's apartment?",
+								   "Ross",
+								   "Phoebe",
+								   "Chandler",
+								   "Joey");
+					addNewQuestion("What Soap Opera does Joey star on?",
+								   "Days of Our Lives",
+								   "Young and the Restless",
+								   "General Hospital",
+								   "Bold and the Beautiful");
+					addNewQuestion("Where does Rachel work after Central Perk?",
+								   "Fortunata Fashions",
+								   "Bloomingdales",
+								   "Ralph Lauren",
+								   "Gucci");
+					addNewQuestion("How many times does Chandler propose to Monica?",
+								   "2 times",
+								   "1 time",
+								   "3 times",
+								   "0");
+					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
+								   "Rachel",
+								   "Phoebe",
+								   "Monica",
+								   "Carol");
 					Collections.shuffle(questions); // Shuffle the list of questions
 					break;
 			
