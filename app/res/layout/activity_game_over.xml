@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/gameOverTextView"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/your_score_textview_margintop"
         android:text="@string/your_score"
         android:textSize="@dimen/your_score_textview_size" />
 
@@ -32,10 +33,18 @@
         android:id="@+id/yourScoreValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/yourScoreTextView"
-        android:layout_alignBottom="@+id/yourScoreTextView"
-        android:layout_toRightOf="@+id/yourScoreTextView"
+        android:layout_below="@+id/yourScoreTextView"
+        android:layout_centerHorizontal="true"
         android:text="350"
         android:textSize="@dimen/your_score_textview_size" />
+
+    <TextView
+        android:id="@+id/rankMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/yourScoreValue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="You are a Friends Master!" />
 
 </RelativeLayout>

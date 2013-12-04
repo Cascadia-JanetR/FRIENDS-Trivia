@@ -26,8 +26,10 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
         public static final int game_over_textview_margintop=0x7f050005;
         public static final int game_over_textview_size=0x7f050004;
+        public static final int rank_message_textview_margintop=0x7f050008;
         public static final int start_btn_height=0x7f050003;
         public static final int start_btn_width=0x7f050002;
+        public static final int your_score_textview_margintop=0x7f050007;
         public static final int your_score_textview_size=0x7f050006;
     }
     public static final class drawable {
@@ -45,31 +47,32 @@ public final class R {
         public static final int question_bg_01=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001a;
-        public static final int answerButton1=0x7f09000d;
-        public static final int answerButton2=0x7f09000e;
-        public static final int answerButton3=0x7f09000f;
-        public static final int answerButton4=0x7f090010;
-        public static final int answerButtonsLinearLayout=0x7f09000c;
-        public static final int blankView01=0x7f090017;
-        public static final int blankView02=0x7f090019;
+        public static final int action_settings=0x7f09001b;
+        public static final int answerButton1=0x7f09000e;
+        public static final int answerButton2=0x7f09000f;
+        public static final int answerButton3=0x7f090010;
+        public static final int answerButton4=0x7f090011;
+        public static final int answerButtonsLinearLayout=0x7f09000d;
+        public static final int blankView01=0x7f090018;
+        public static final int blankView02=0x7f09001a;
         public static final int gameOverRelativeLayout=0x7f090000;
         public static final int gameOverTextView=0x7f090001;
-        public static final int levelStartRootLayout=0x7f090004;
-        public static final int playButton=0x7f090018;
-        public static final int playGameLayout=0x7f090006;
-        public static final int playerScoreTextView=0x7f09000b;
-        public static final int pointValueTextView=0x7f09000a;
-        public static final int progressAnswer1ImageView=0x7f090012;
-        public static final int progressAnswer2ImageView=0x7f090013;
-        public static final int progressAnswer3ImageView=0x7f090014;
-        public static final int progressAnswer4ImageView=0x7f090015;
-        public static final int progressAnswer5ImageView=0x7f090016;
-        public static final int questionBgImageView=0x7f090008;
-        public static final int questionProgressLinearLayout=0x7f090011;
-        public static final int questionTextView=0x7f090009;
-        public static final int questionTopRelativeLayout=0x7f090007;
-        public static final int startButton=0x7f090005;
+        public static final int levelStartRootLayout=0x7f090005;
+        public static final int playButton=0x7f090019;
+        public static final int playGameLayout=0x7f090007;
+        public static final int playerScoreTextView=0x7f09000c;
+        public static final int pointValueTextView=0x7f09000b;
+        public static final int progressAnswer1ImageView=0x7f090013;
+        public static final int progressAnswer2ImageView=0x7f090014;
+        public static final int progressAnswer3ImageView=0x7f090015;
+        public static final int progressAnswer4ImageView=0x7f090016;
+        public static final int progressAnswer5ImageView=0x7f090017;
+        public static final int questionBgImageView=0x7f090009;
+        public static final int questionProgressLinearLayout=0x7f090012;
+        public static final int questionTextView=0x7f09000a;
+        public static final int questionTopRelativeLayout=0x7f090008;
+        public static final int rankMessageTextView=0x7f090004;
+        public static final int startButton=0x7f090006;
         public static final int yourScoreTextView=0x7f090002;
         public static final int yourScoreValue=0x7f090003;
     }
