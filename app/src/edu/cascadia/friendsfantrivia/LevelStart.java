@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 public class LevelStart extends Activity {
@@ -39,8 +40,8 @@ public class LevelStart extends Activity {
 		setTitle("Level " + curLevel);
 		
 		// Put curLevel as startButton text (Example: "Level 2")
-		Button startButton = (Button)findViewById(R.id.startButton);
-		startButton.setText("Start Level " + curLevel);
+		ImageButton startButton = (ImageButton)findViewById(R.id.startButton);
+		startButton.setTag("Start Level " + curLevel);
 		
 		// Add OnClickListener to "Start Level x" button
 		startButton.setOnClickListener(startLevelButtonListener);
