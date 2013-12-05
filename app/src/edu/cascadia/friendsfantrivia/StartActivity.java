@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,6 +43,8 @@ public class StartActivity extends Activity {
 		playButton.setOnClickListener(playButtonListener);
 		
 		// TODO: Play Friends theme music
+	      // allow volume keys to set game volume
+	      setVolumeControlStream(AudioManager.STREAM_MUSIC);
 	}// end onCreate
 	
 	// OnClickListener for "Play!" button. Calls startGame method.
