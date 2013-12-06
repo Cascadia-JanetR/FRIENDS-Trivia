@@ -30,6 +30,7 @@ public class GameOverActivity extends Activity {
 	private int score; // player's score
 	private int highScore; // player's best score
 	private int rank; // player's rank
+	private MediaPlayer mPlayer; // MediaPlayer object that plays sounds/music
 	
 	// Constants
 	public static final int AVID_FAN = 1; // Rank 1
@@ -100,7 +101,7 @@ public class GameOverActivity extends Activity {
 		// allow volume keys to set game volume
 	      	setVolumeControlStream(AudioManager.STREAM_MUSIC);
 		// TODO: Play Friends theme music
-	      	MediaPlayer mPlayer = MediaPlayer.create(this, R.raw.friends_theme);
+	      	mPlayer = MediaPlayer.create(this, R.raw.friends_theme);
 	      	mPlayer.start();
 	    
 	}// end onCreate
@@ -158,6 +159,7 @@ public class GameOverActivity extends Activity {
 	 * @param view - the View that was tapped
 	 */
 	public void playAgain(View view) {
+		mPlayer.stop(); // Stop the Friends Theme music before going to StartActivity
 		Intent intent = new Intent(this, StartActivity.class); // create Intent
 		startActivity(intent); // start the StartActivity Activity
 	}
