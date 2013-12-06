@@ -99,7 +99,10 @@ public final class R {
         public static final int level_start=0x7f090001;
         public static final int play_game=0x7f090002;
         public static final int start=0x7f090003;
- 
+    }
+    public static final class raw {
+        public static final int friends_theme=0x7f040000;
+    }
     public static final class string {
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
