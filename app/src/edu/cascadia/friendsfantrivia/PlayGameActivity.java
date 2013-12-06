@@ -8,11 +8,10 @@ package edu.cascadia.friendsfantrivia;
 
 import java.util.ArrayList;
 
-import com.deitel.flagquizgame.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -30,6 +29,7 @@ public class PlayGameActivity extends Activity {
 	private Question curQuestion; // the current Question the user is on
 	private ArrayList<String> possibleAnswers; // the list of possible answers to curQuestion
 	private Animation shakeAnimation; // animation for incorrect guess
+	private Handler handler; // used to delay loading next question
 	
 	// UI variables
 	private TextView pointValueTextView; // TextView that displays the point value
@@ -96,6 +96,13 @@ public class PlayGameActivity extends Activity {
 		progressAnswer4ImageView.setImageResource(R.drawable.ic_not_answered);
 		progressAnswer5ImageView.setImageResource(R.drawable.ic_not_answered);
 		
+		// load the shake animation that's used for incorrect answers
+	    shakeAnimation = 
+	         AnimationUtils.loadAnimation(this, R.anim.incorrect_shake); 
+	    shakeAnimation.setRepeatCount(3); // animation repeats 3 times
+	    
+	    handler = new Handler(); // used to perform delayed operations
+		
 		// Load the first question
 		loadNextQuestion();
 	}// end onCreate
@@ -137,24 +144,38 @@ public class PlayGameActivity extends Activity {
 			playerScoreTextView.setText("Score: " + curScore); // Update player's current score
 			// update the question progress icon (at bottom) - true means correct
 			updateQuestionProgressIcon(curQuestionNum, true);
-			// Go to next level, game over, or load next question
-			continueGame();
+			// continue game after a 1-second delay
+            handler.postDelayed(
+               new Runnable()
+               { 
+                  @Override
+                  public void run()
+                  {
+                	// Go to next level, game over, or load next question
+          			continueGame();
+                  }
+               }, 1000); // 1000 milliseconds for 1-second delay
 		} else { // if answer is wrong:
 			// TODO: button turns red
 			// TODO: play bad sound
 			// TODO: device vibrates (if device supports it)
-			
-			// load the shake animation that's used for incorrect answers
-		      shakeAnimation = 
-		         AnimationUtils.loadAnimation(this, R.anim.incorrect_shake); 
-		      shakeAnimation.setRepeatCount(3); // animation repeats 3 times 
-			
+		    
+		   // play the shake animation on the button that was tapped
+		   answerButton.startAnimation(shakeAnimation);
 			
 			// update the question progress icon (at bottom) - false means incorrect
 			updateQuestionProgressIcon(curQuestionNum, false);
 			// No score added
-			// Go to next level, game over, or load next question
-			continueGame();
+			handler.postDelayed(
+               new Runnable()
+               { 
+                  @Override
+                  public void run()
+                  {
+                	// Go to next level, game over, or load next question
+          			continueGame();
+                  }
+               }, 1000); // 1000 milliseconds for 1-second delay
 		}
 		
 		// TODO: Cancel the CountDownTimer (if necessary)
