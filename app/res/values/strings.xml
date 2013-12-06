@@ -18,5 +18,12 @@
     <string name="title_activity_game_over">Game Over!</string>
     <string name="game_over">Game Over!</string>
     <string name="your_score">Your Score: </string>
+    <string name="high_score">High Score:</string>
+    <string name="new_high_score">New High Score!</string>
+    <string name="rank">Rank:</string>
+    <string name="rankmessage_avidfan">You are an avid FRIENDS fan.</string>
+    <string name="rankmessage_fanatic">You are a FRIENDS fanatic!</string>
+    <string name="rankmessage_master">You are a FRIENDS trivia master!</string>
+    <string name="play_again">Play Again!</string>
 
 </resources>

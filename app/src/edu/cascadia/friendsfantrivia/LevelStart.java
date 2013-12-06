@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
@@ -21,7 +20,6 @@ public class LevelStart extends Activity {
 	// Instance variables
 	private int curLevel; // The level player is currently on
 	private int curScore; // Player's current score
-	private int highScore; // Player's high score
 	
 	// UI elements
 	private LinearLayout levelStartRootLayout; // Top-level layout (set background)
@@ -34,7 +32,6 @@ public class LevelStart extends Activity {
 		// Get the data from the intent. Values will be -1 if there's a problem
 		curLevel = getIntent().getIntExtra("curLevel", -1);
 		curScore = getIntent().getIntExtra("curScore", -1);
-		highScore = getIntent().getIntExtra("highScore", -1);
 		
 		// Put curLevel as the title in the action bar
 		setTitle("Level " + curLevel);
@@ -70,7 +67,6 @@ public class LevelStart extends Activity {
 		Intent intent = new Intent(this, PlayGameActivity.class); // create a new intent
 		intent.putExtra("curLevel", curLevel); // add current level to the intent
 		intent.putExtra("curScore", curScore); // add current score to the intent
-		intent.putExtra("highScore", highScore); // add high score to the intent
 		startActivity(intent); // switch to PlayGameActivity
 	}// end startNextLevel method
 

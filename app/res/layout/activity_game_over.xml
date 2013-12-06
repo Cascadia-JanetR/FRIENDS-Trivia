@@ -17,6 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/game_over_textview_margintop"
         android:text="@string/game_over"
+        android:textColor="#fff"
         android:textSize="@dimen/game_over_textview_size" />
 
     <TextView
@@ -30,21 +31,74 @@
         android:textSize="@dimen/your_score_textview_size" />
 
     <TextView
-        android:id="@+id/yourScoreValue"
+        android:id="@+id/yourScoreValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/yourScoreTextView"
         android:layout_centerHorizontal="true"
-        android:text="350"
         android:textSize="@dimen/your_score_textview_size" />
 
     <TextView
-        android:id="@+id/rankMessageTextView"
+        android:id="@+id/highScoreTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/yourScoreValue"
+        android:layout_below="@+id/yourScoreValueTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/rank_message_textview_margintop"
-        android:text="You are a FRIENDS Master!" />
+        android:layout_marginTop="@dimen/high_score_textview_margintop"
+        android:text="@string/high_score"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/highScoreValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/highScoreTextView"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/high_score_textview_size" />
+
+    <TextView
+        android:id="@+id/newHighScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/highScoreValueTextView"
+        android:layout_centerHorizontal="true"
+        android:text="@string/new_high_score"
+        android:textColor="@color/newHighScoreColor"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/rankLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newHighScoreTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/rank_linearlayout_margintop" >
+
+        <TextView
+            android:id="@+id/rankTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/rank_marginright"
+            android:text="@string/rank"
+            android:textSize="@dimen/rank_textview_size" />
+
+        <TextView
+            android:id="@+id/rankMessageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/rank_textview_size" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/play_again_button_marginbottom"
+        android:text="@string/play_again"
+        android:onClick="playAgain" />
 
 </RelativeLayout>

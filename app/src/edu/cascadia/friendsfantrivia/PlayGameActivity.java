@@ -9,21 +9,18 @@ package edu.cascadia.friendsfantrivia;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class PlayGameActivity extends Activity {
 	
 	// Instance variables
 	private int curLevel; // level player is currently on
 	private int curScore; // player's current score
-	private int highScore; // player's high score
 	private Quiz curQuiz; // the current Quiz the user is taking
 	private int curQuestionNum; // the current question number the player is on
 	private Question curQuestion; // the current Question the user is on
@@ -59,7 +56,6 @@ public class PlayGameActivity extends Activity {
 		// Will be -1 if there's a problem
 		curLevel = getIntent().getIntExtra("curLevel", -1);
 		curScore = getIntent().getIntExtra("curScore", -1);
-		highScore = getIntent().getIntExtra("highScore", -1);
 		
 		// Put curLevel as the title in the action bar
 		setTitle("Level " + curLevel);
@@ -163,21 +159,15 @@ public class PlayGameActivity extends Activity {
 			// First check if game is over, if so, check for new high score and
 			// go to GameOverActivity
 			if (gameOver()) {
-				// Test Toast
-				Context context = getApplicationContext();
-				CharSequence text = "Game Over! Go to GameOverActivity";
-				int duration = Toast.LENGTH_SHORT;
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
-				// TODO: Check for high score and overwrite if necessary,
-				// TODO: Add GameOverActivity, and go to it here
+				Intent intent = new Intent(this, GameOverActivity.class); // create new intent
+				intent.putExtra("curScore", curScore); // add current score to intent
+				startActivity(intent); // start GameOverActivity
 			} else {
 				// Otherwise to to the next level
 				curLevel++; // Increment the current level
 				Intent intent = new Intent(this, LevelStart.class); // create a new intent
 				intent.putExtra("curLevel", curLevel); // add current level into the intent
 				intent.putExtra("curScore", curScore); // add current score to the intent
-				intent.putExtra("highScore", highScore); // add high score to the intent
 				startActivity(intent); // start the LevelStart activity
 			}
 		}
@@ -271,4 +261,13 @@ public class PlayGameActivity extends Activity {
 //		return true;
 //	}
 
-}
+}// end class
+
+
+/*
+ * Friends Fan Trivia app
+ * 
+ * 
+ * Cascadia Community College - BIT 272 (Mobile App Development) - Fall 2013
+ * Ben Harrison, Janet Rasque, Henry NGoy
+ */
