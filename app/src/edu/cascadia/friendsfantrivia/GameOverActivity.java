@@ -13,6 +13,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -94,6 +96,12 @@ public class GameOverActivity extends Activity {
 	    
 	    // Display appropriate rank message in rankMessageTextView
 	    rankMessageTextView.setText(getRankString(rank));
+		    
+		// allow volume keys to set game volume
+	      	setVolumeControlStream(AudioManager.STREAM_MUSIC);
+		// TODO: Play Friends theme music
+	      	MediaPlayer mPlayer = MediaPlayer.create(this, R.raw.friends_theme);
+	      	mPlayer.start();
 	    
 	}// end onCreate
 	
