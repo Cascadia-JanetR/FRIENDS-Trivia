@@ -23,6 +23,7 @@ public class StartActivity extends Activity {
 	// Instance variables
 	private int curLevel; // the current level the player is on (starts at 1)
 	private int curScore; // player's current score
+	private MediaPlayer mPlayer; // MediaPlayer object that plays sounds/music
 	
 	// This is called when the app first starts
 	@Override
@@ -38,10 +39,10 @@ public class StartActivity extends Activity {
 		playButton.setOnClickListener(playButtonListener);
 		
 		// allow volume keys to set game volume
-	      	setVolumeControlStream(AudioManager.STREAM_MUSIC);
-		// TODO: Play Friends theme music
-	      	MediaPlayer mPlayer = MediaPlayer.create(this, R.raw.friends_theme);
-	      	mPlayer.start();
+      	setVolumeControlStream(AudioManager.STREAM_MUSIC);
+	// TODO: Play Friends theme music
+      	mPlayer = MediaPlayer.create(this, R.raw.friends_theme);
+      	mPlayer.start();
 	      	
 	     
 	}// end onCreate
