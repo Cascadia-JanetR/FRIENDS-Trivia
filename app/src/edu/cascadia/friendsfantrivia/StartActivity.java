@@ -36,11 +36,12 @@ public class StartActivity extends Activity {
 		ImageButton playButton = (ImageButton) findViewById(R.id.playButton);
 		playButton.setOnClickListener(playButtonListener);
 		
+		// allow volume keys to set game volume
+	      	setVolumeControlStream(AudioManager.STREAM_MUSIC);
 		// TODO: Play Friends theme music
 	      	MediaPlayer mPlayer = MediaPlayer.create(this.R.raw.friends_theme);
 	      	mPlayer.start();
-	      	// allow volume keys to set game volume
-	      	setVolumeControlStream(AudioManager.STREAM_MUSIC);
+	      	
 	     
 	}// end onCreate
 	
