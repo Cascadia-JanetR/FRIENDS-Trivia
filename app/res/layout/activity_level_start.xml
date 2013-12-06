@@ -25,11 +25,11 @@
 
         <ImageButton
             android:id="@+id/startButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/next_lvl_btn_width"
+            android:layout_height="@dimen/next_lvl_btn_height"
             android:background="@null"
-            android:src="@drawable/next"
-            android:contentDescription="go to next level"/>
+            android:contentDescription="go to next level"
+            android:src="@drawable/next" />
 
         <View
         android:layout_width="0dp"

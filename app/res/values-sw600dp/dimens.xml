@@ -6,5 +6,7 @@
     -->
     <dimen name="start_btn_width">230dp</dimen>
     <dimen name="start_btn_height">200dp</dimen>
+    <dimen name="next_lvl_btn_width">230dp</dimen>
+    <dimen name="next_lvl_btn_height">200dp</dimen>
 
 </resources>

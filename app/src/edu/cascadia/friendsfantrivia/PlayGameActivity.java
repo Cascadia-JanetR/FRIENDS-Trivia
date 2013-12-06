@@ -8,10 +8,14 @@ package edu.cascadia.friendsfantrivia;
 
 import java.util.ArrayList;
 
+import com.deitel.flagquizgame.R;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +29,7 @@ public class PlayGameActivity extends Activity {
 	private int curQuestionNum; // the current question number the player is on
 	private Question curQuestion; // the current Question the user is on
 	private ArrayList<String> possibleAnswers; // the list of possible answers to curQuestion
+	private Animation shakeAnimation; // animation for incorrect guess
 	
 	// UI variables
 	private TextView pointValueTextView; // TextView that displays the point value
@@ -138,6 +143,13 @@ public class PlayGameActivity extends Activity {
 			// TODO: button turns red
 			// TODO: play bad sound
 			// TODO: device vibrates (if device supports it)
+			
+			// load the shake animation that's used for incorrect answers
+		      shakeAnimation = 
+		         AnimationUtils.loadAnimation(this, R.anim.incorrect_shake); 
+		      shakeAnimation.setRepeatCount(3); // animation repeats 3 times 
+			
+			
 			// update the question progress icon (at bottom) - false means incorrect
 			updateQuestionProgressIcon(curQuestionNum, false);
 			// No score added
@@ -269,5 +281,5 @@ public class PlayGameActivity extends Activity {
  * 
  * 
  * Cascadia Community College - BIT 272 (Mobile App Development) - Fall 2013
- * Ben Harrison, Janet Rasque, Henry NGoy
+ * Ben Harrison, Janet Rasque, Henry Ngoy
  */

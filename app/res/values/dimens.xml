@@ -15,5 +15,7 @@
 	<dimen name="rank_marginright">3dp</dimen>
 	<dimen name="rank_textview_size">14sp</dimen>
 	<dimen name="play_again_button_marginbottom">50dp</dimen>
+	<dimen name="next_lvl_btn_width">150dp</dimen>
+	<dimen name="next_lvl_btn_height">120dp</dimen>
 
 </resources>
