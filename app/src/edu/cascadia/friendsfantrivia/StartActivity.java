@@ -38,7 +38,10 @@ public class StartActivity extends Activity {
 		
 		// TODO: Play Friends theme music
 	      // allow volume keys to set game volume
-	      setVolumeControlStream(AudioManager.STREAM_MUSIC);	      
+	      setVolumeControlStream(AudioManager.STREAM_MUSIC);
+	      // runs the background sound 
+	      MediaPlayer mPlayer = MediaPlayer.create(this.R.raw.friends_theme);
+	      mPlayer.start();
 	}// end onCreate
 	
 	// OnClickListener for "Play!" button. Calls startGame method.
