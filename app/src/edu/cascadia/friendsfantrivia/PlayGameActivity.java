@@ -136,6 +136,8 @@ public class PlayGameActivity extends Activity {
 			playerScoreTextView.setText("Score: " + curScore); // Update player's current score
 			// update the question progress icon (at bottom) - true means correct
 			updateQuestionProgressIcon(curQuestionNum, true);
+			// Go to next level, game over, or load next question
+			continueGame();
 		} else { // if answer is wrong:
 			// TODO: button turns red
 			// TODO: play bad sound
@@ -143,13 +145,19 @@ public class PlayGameActivity extends Activity {
 			// update the question progress icon (at bottom) - false means incorrect
 			updateQuestionProgressIcon(curQuestionNum, false);
 			// No score added
+			// Go to next level, game over, or load next question
+			continueGame();
 		}
 		
 		// TODO: Cancel the CountDownTimer (if necessary)
 		
 		// TODO: Slight delay before going to next screen or loading next question
 		
-		
+	}// end answerQuestion
+	
+	// Method to determine if the game should go to the next level, go to the
+	// GameOverActivity, or load the next question
+	public void continueGame() {
 		// Check if level is over
 		if (levelOver()) {
 			// First check if game is over, if so, check for new high score and
@@ -178,7 +186,7 @@ public class PlayGameActivity extends Activity {
 			++curQuestionNum;
 			loadNextQuestion();
 		}
-	}// end answerQuestion
+	}// end continueGame
 	
 	// Method to determine if the current level is over
 	public boolean levelOver() {
