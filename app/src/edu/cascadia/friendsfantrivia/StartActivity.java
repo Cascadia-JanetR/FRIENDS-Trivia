@@ -51,6 +51,7 @@ public class StartActivity extends Activity {
 	public OnClickListener playButtonListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
+			mPlayer.stop();
 			startGame(v); // start the game
 		}
 	};// end playButtonListener
