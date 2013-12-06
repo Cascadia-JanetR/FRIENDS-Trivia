@@ -34,6 +34,11 @@ public final class R {
         public static final int rank_marginright=0x7f06000b;
         public static final int rank_textview_size=0x7f06000c;
         public static final int start_btn_height=0x7f060003;
+        /** 
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw600dp devices (e.g. 7" tablets) here.
+    
+         */
         public static final int start_btn_width=0x7f060002;
         public static final int your_score_textview_margintop=0x7f060007;
         public static final int your_score_textview_size=0x7f060006;
