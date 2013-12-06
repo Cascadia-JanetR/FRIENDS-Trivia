@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 
+
 public class StartActivity extends Activity {
 	
 	// Instance variables
