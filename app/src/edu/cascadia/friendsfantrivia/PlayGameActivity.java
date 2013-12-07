@@ -118,6 +118,12 @@ public class PlayGameActivity extends Activity {
 		// Display the question in questionTextView
 		questionTextView.setText(curQuestion.getQuestionString());
 		
+		// Change the button backgrounds back to default color
+		answerButton1.setBackground(getResources().getDrawable(R.drawable.btn_default_holo_dark));
+		answerButton2.setBackground(getResources().getDrawable(R.drawable.btn_default_holo_dark));
+		answerButton3.setBackground(getResources().getDrawable(R.drawable.btn_default_holo_dark));
+		answerButton4.setBackground(getResources().getDrawable(R.drawable.btn_default_holo_dark));
+		
 		// Display the answers in the answer buttons
 		answerButton1.setText(possibleAnswers.get(0));
 		answerButton2.setText(possibleAnswers.get(1));
@@ -138,7 +144,8 @@ public class PlayGameActivity extends Activity {
 		// Handle correct/incorrect answer (color, sound, vibrate?,
 		// update icon at bottom)
 		if (curQuestion.isCorrectAnswer(answerText)) { // if answer is correct:
-			// TODO: button turns green
+			// Make answer button green
+			answerButton.setBackgroundColor(getResources().getColor(R.color.rightAnswerButtonColor));
 			// TODO: play good sound
 			curScore += getPointValue(curLevel); // add correct number of points
 			playerScoreTextView.setText("Score: " + curScore); // Update player's current score
@@ -156,10 +163,9 @@ public class PlayGameActivity extends Activity {
                   }
                }, 1000); // 1000 milliseconds for 1-second delay
 		} else { // if answer is wrong:
-			// TODO: button turns red
+			// Make answer button green
+			answerButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswerButtonColor));
 			// TODO: play bad sound
-			// TODO: device vibrates (if device supports it)
-		    
 		   // play the shake animation on the button that was tapped
 		   answerButton.startAnimation(shakeAnimation);
 			
@@ -179,8 +185,6 @@ public class PlayGameActivity extends Activity {
 		}
 		
 		// TODO: Cancel the CountDownTimer (if necessary)
-		
-		// TODO: Slight delay before going to next screen or loading next question
 		
 	}// end answerQuestion
 	

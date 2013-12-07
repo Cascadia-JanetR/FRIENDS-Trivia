@@ -3,4 +3,6 @@
     <color name="playerScoreColor">#ddd</color>
     <color name="pointValueColor">#7b93af</color>
     <color name="newHighScoreColor">#0d0</color>
+    <color name="rightAnswerButtonColor">#0c0</color>
+    <color name="wrongAnswerButtonColor">#c00</color>
 </resources>
