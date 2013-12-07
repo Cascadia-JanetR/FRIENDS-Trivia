@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -102,6 +103,9 @@ public class PlayGameActivity extends Activity {
 	    shakeAnimation.setRepeatCount(3); // animation repeats 3 times
 	    
 	    handler = new Handler(); // used to perform delayed operations
+	    
+	    // allow volume keys to set game volume
+      	setVolumeControlStream(AudioManager.STREAM_MUSIC);
 		
 		// Load the first question
 		loadNextQuestion();
