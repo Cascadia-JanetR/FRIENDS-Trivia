@@ -27,6 +27,7 @@
             android:id="@+id/startButton"
             android:layout_width="330dp"
             android:layout_height="251dp"
+            android:layout_marginLeft="40dp"
             android:background="@null"
             android:contentDescription="go to next level"
             android:src="@drawable/next" />
