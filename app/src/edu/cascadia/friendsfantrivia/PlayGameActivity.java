@@ -7,12 +7,13 @@
 package edu.cascadia.friendsfantrivia;
 
 import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.SparseIntArray;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -52,6 +53,12 @@ public class PlayGameActivity extends Activity {
 	private final int LEVEL_3_PTS = 300; // Level 3 questions are worth 300 pts
 	private final int NUM_QUESTIONS = 5; // Number of questions per level
 	private final int NUM_LEVELS = 3; // Number of levels in the game
+	
+	// Constants and variables for managing sounds
+	private static final int INCORRECT_SOUND_ID = 0;
+	private static final int CORRECT_SOUND_ID = 1;
+	private SoundPool soundPool; // plays sound effects
+	private SparseIntArray soundSparseIntArray; // maps IDs to SoundPool
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +113,15 @@ public class PlayGameActivity extends Activity {
 	    
 	    // allow volume keys to set game volume
       	setVolumeControlStream(AudioManager.STREAM_MUSIC);
+      	
+      	// initialize SoundPool to play the activity's two sound effects
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+        
+        // create Map of sounds and pre-load sounds
+        //soundMap = new HashMap<Integer, Integer>(); // create new HashMap
+        soundSparseIntArray = new SparseIntArray(2); 
+        soundSparseIntArray.put(INCORRECT_SOUND_ID, soundPool.load(this, R.raw.janiceohmy, 1));
+        soundSparseIntArray.put(CORRECT_SOUND_ID, soundPool.load(this, R.raw.howdoing, 1));
 		
 		// Load the first question
 		loadNextQuestion();
@@ -150,12 +166,13 @@ public class PlayGameActivity extends Activity {
 		if (curQuestion.isCorrectAnswer(answerText)) { // if answer is correct:
 			// Make answer button green
 			answerButton.setBackgroundColor(getResources().getColor(R.color.rightAnswerButtonColor));
-			// TODO: play good sound
+			// Play "correct" sound
+			soundPool.play(soundSparseIntArray.get(CORRECT_SOUND_ID), 1, 1, 1, 0, 1f);
 			curScore += getPointValue(curLevel); // add correct number of points
 			playerScoreTextView.setText("Score: " + curScore); // Update player's current score
 			// update the question progress icon (at bottom) - true means correct
 			updateQuestionProgressIcon(curQuestionNum, true);
-			// continue game after a 1-second delay
+			// continue game after a 2-second delay
             handler.postDelayed(
                new Runnable()
                { 
@@ -165,17 +182,19 @@ public class PlayGameActivity extends Activity {
                 	// Go to next level, game over, or load next question
           			continueGame();
                   }
-               }, 1000); // 1000 milliseconds for 1-second delay
+               }, 2000); // 2000 milliseconds for 1-second delay
 		} else { // if answer is wrong:
 			// Make answer button green
 			answerButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswerButtonColor));
-			// TODO: play bad sound
-		   // play the shake animation on the button that was tapped
-		   answerButton.startAnimation(shakeAnimation);
+			// play "incorrect" sound
+			soundPool.play(soundSparseIntArray.get(INCORRECT_SOUND_ID), 1, 1, 1, 0, 1f);
+		    // play the shake animation on the button that was tapped
+		    answerButton.startAnimation(shakeAnimation);
 			
 			// update the question progress icon (at bottom) - false means incorrect
 			updateQuestionProgressIcon(curQuestionNum, false);
 			// No score added
+			// Continue game after 2-second delay
 			handler.postDelayed(
                new Runnable()
                { 
@@ -185,7 +204,7 @@ public class PlayGameActivity extends Activity {
                 	// Go to next level, game over, or load next question
           			continueGame();
                   }
-               }, 1000); // 1000 milliseconds for 1-second delay
+               }, 2000); // 2000 milliseconds for 2-second delay
 		}
 		
 		// TODO: Cancel the CountDownTimer (if necessary)
