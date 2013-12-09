@@ -150,12 +150,24 @@ public class PlayGameActivity extends Activity {
 		answerButton3.setText(possibleAnswers.get(2));
 		answerButton4.setText(possibleAnswers.get(3));
 		
+		// Re-enable all the buttons until the next question is loaded
+		answerButton1.setEnabled(true);
+		answerButton2.setEnabled(true);
+		answerButton3.setEnabled(true);
+		answerButton4.setEnabled(true);
+		
 		// TODO: Add a CountDownTimer, set up what should happen when it
 		// ends (wrong answer), on each tick (update timer TextView etc.).
 	}// end loadNextQuestion
 	
 	// Called when user taps an answer button
 	public void answerQuestion(View view) {
+		// Disable all the buttons until the next question is loaded
+  		answerButton1.setEnabled(false);
+  		answerButton2.setEnabled(false);
+  		answerButton3.setEnabled(false);
+  		answerButton4.setEnabled(false);
+  		
 		// Get which button was tapped
 		Button answerButton = (Button)view;
 		// Get the tapped button's text as a String
