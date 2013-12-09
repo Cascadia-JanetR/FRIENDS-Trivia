@@ -51,11 +51,36 @@ public class Quiz {
 								   "Ross's",
 								   "Chandler's",
 								   "Rachel's");
-					addNewQuestion("Monica has how many catagories of towels?",
-								   "11",
-								   "7",
-								   "5",
-								   "9");
+					addNewQuestion("What is the name of Ross's son?",
+								   "Ben",
+								   "Charlie",
+								   "Axel",
+								   "Tag");
+					addNewQuestion("Where is Rachel's first job?",
+								   "Central Perk",
+								   "Central Park",
+								   "Coffee Perk",
+								   "Central Coffee");
+					addNewQuestion("What instrument does Phoebe play?",
+								   "Guitar",
+								   "Banjo",
+								   "Bass",
+								   "Sax");
+					addNewQuestion("What is Chandler's last name?",
+								   "Bing",
+								   "Bong",
+								   "Green",
+								   "Gellar");
+					addNewQuestion("What vehicle does Phoebe inherit from her grandma?",
+								   "Taxi cab",
+								   "Van",
+								   "Bus",
+								   "Boat");
+					addNewQuestion("What is Monica's job?",
+								   "Chef",
+								   "Housekeeper",
+								   "Project Manager",
+								   "Building Supervisor");
 					Collections.shuffle(questions); // Shuffle the list of questions
 					break;
 			

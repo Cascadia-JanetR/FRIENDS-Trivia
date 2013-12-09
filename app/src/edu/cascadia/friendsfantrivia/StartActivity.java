@@ -72,5 +72,5 @@ public class StartActivity extends Activity {
  * 
  * 
  * Cascadia Community College - BIT 272 (Mobile App Development) - Fall 2013
- * Ben Harrison, Janet Rasque, Henry NGoy
+ * Ben Harrison, Janet Rasque, Henry Ngoy
  */
