@@ -14,13 +14,13 @@
     <RelativeLayout
         android:id="@+id/questionTopRelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight=".05" >
+        android:layout_height="0dp"
+        android:layout_weight="50" >
 
         <ImageView
             android:id="@+id/questionBgImageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:contentDescription="@string/questionBackgroundDescription"
             android:scaleType="fitXY"
@@ -64,12 +64,12 @@
     <LinearLayout
         android:id="@+id/answerButtonsLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginTop="10dp"
-        android:layout_weight=".8"
+        android:layout_weight="42"
         android:orientation="vertical" >
 
         <Button
@@ -83,7 +83,7 @@
             android:id="@+id/answerButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/answer_button_marginTop"
             android:layout_weight="1"
             android:onClick="answerQuestion" />
 
@@ -91,7 +91,7 @@
             android:id="@+id/answerButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/answer_button_marginTop"
             android:layout_weight="1"
             android:onClick="answerQuestion" />
 
@@ -99,7 +99,7 @@
             android:id="@+id/answerButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/answer_button_marginTop"
             android:layout_weight="1"
             android:onClick="answerQuestion" />
 
@@ -108,8 +108,8 @@
     <LinearLayout
         android:id="@+id/questionProgressLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight=".01"
+        android:layout_height="0dp"
+        android:layout_weight="8"
         android:background="#000"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
@@ -121,6 +121,7 @@
             android:id="@+id/progressAnswer1ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:contentDescription="@string/questionProgress" />
 
@@ -128,6 +129,7 @@
             android:id="@+id/progressAnswer2ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:contentDescription="@string/questionProgress" />
 
@@ -135,6 +137,7 @@
             android:id="@+id/progressAnswer3ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:contentDescription="@string/questionProgress" />
 
@@ -142,6 +145,7 @@
             android:id="@+id/progressAnswer4ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:contentDescription="@string/questionProgress" />
 
@@ -149,6 +153,7 @@
             android:id="@+id/progressAnswer5ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:contentDescription="@string/questionProgress" />
 

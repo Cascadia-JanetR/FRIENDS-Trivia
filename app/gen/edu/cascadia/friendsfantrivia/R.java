@@ -30,6 +30,7 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f070000;
         public static final int activity_vertical_margin=0x7f070001;
+        public static final int answer_button_marginTop=0x7f070010;
         public static final int game_over_textview_margintop=0x7f070005;
         public static final int game_over_textview_size=0x7f070004;
         public static final int high_score_textview_margintop=0x7f07000a;
