@@ -110,6 +110,31 @@ public class Quiz {
 								   "Mr. Chandler Bing",
 								   "Joey Tribbani",
 								   "Monica Gellar");
+					addNewQuestion("Who did Ross date at the beginning of season 2?",
+								   "Juile",
+								   "Susan",
+								   "Rachel",
+								   "Phoebe");
+					addNewQuestion("Who is Rosita?",
+								   "Joey's Recliner",
+								   "Joey's TV",
+								   "Joey's Microwave",
+								   "Joey's Couch");
+					addNewQuestion("What is Phoebe's twin sister's name?",
+								   "Ursula",
+								   "Rochelle",
+								   "Davina",
+								   "Phoebo");
+					addNewQuestion("Who gets married in Vegas?",
+								   "Ross and Rachel",
+								   "Monica and Chandler",
+								   "Joey and Phoebe",
+								   "Rachel and Joey");
+					addNewQuestion("Which Las Vegas casino does Joey work in?",
+								   "Caesars Palace",
+								   "Bellagio",
+								   "Paris",
+								   "Flamingo");
 					Collections.shuffle(questions); // Shuffle the list of questions
 					break;
 				
@@ -134,6 +159,31 @@ public class Quiz {
 								   "1 time",
 								   "3 times",
 								   "0");
+					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
+								   "Rachel",
+								   "Phoebe",
+								   "Monica",
+								   "Carol");
+					addNewQuestion("What does Monica borrow from the gift shop in Vegas?",
+								   "Sweater",
+								   "Bible",
+								   "Pen",
+								   "Mirror");
+					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
+								   "Rachel",
+								   "Phoebe",
+								   "Monica",
+								   "Carol");
+					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
+								   "Rachel",
+								   "Phoebe",
+								   "Monica",
+								   "Carol");
+					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
+								   "Rachel",
+								   "Phoebe",
+								   "Monica",
+								   "Carol");
 					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
 								   "Rachel",
 								   "Phoebe",
