@@ -119,9 +119,27 @@ public final class R {
         public static final int start=0x7f0a0003;
     }
     public static final class raw {
-        public static final int friends_theme=0x7f050000;
-        public static final int howdoing=0x7f050001;
-        public static final int janiceohmy=0x7f050002;
+        public static final int belikeyou=0x7f050000;
+        public static final int bfbumer=0x7f050001;
+        public static final int biteme=0x7f050002;
+        public static final int friends_theme=0x7f050003;
+        public static final int friendsclosing=0x7f050004;
+        public static final int geek=0x7f050005;
+        public static final int howdoing=0x7f050006;
+        public static final int howdoing2=0x7f050007;
+        public static final int irock=0x7f050008;
+        public static final int janiceohmy=0x7f050009;
+        public static final int nooooo=0x7f05000a;
+        public static final int ohmy=0x7f05000b;
+        public static final int ohno=0x7f05000c;
+        public static final int ohnonono=0x7f05000d;
+        public static final int said2=0x7f05000e;
+        public static final int shutupmom=0x7f05000f;
+        public static final int soparty=0x7f050010;
+        public static final int sosad=0x7f050011;
+        public static final int stupid=0x7f050012;
+        public static final int whatdone=0x7f050013;
+        public static final int yeah=0x7f050014;
     }
     public static final class string {
         public static final int action_settings=0x7f080001;
