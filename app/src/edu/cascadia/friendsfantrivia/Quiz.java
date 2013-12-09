@@ -169,26 +169,26 @@ public class Quiz {
 								   "Bible",
 								   "Pen",
 								   "Mirror");
-					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
-								   "Rachel",
+					addNewQuestion("What is the name of Rachel's assistant?",
+								   "Tag",
+								   "Steve",
+								   "Joel",
+								   "Chris");
+					addNewQuestion("What is Phoebe's gift for Monica and Chandler's wedding?",
+								   "Ms. Pac-Man",
+								   "Free Massages",
+								   "Plane Tickets",
+								   "Trip to London");
+					addNewQuestion("How is Joey's character killed off in the soap?",
+								   "Fell down an Elevator Shaft",
+								   "Heart Attack",
+								   "Brain Tumor",
+								   "Train Accident");
+					addNewQuestion("Who wins Rock, Paper, Scissors in the One with the Late Thanksgiving?",
 								   "Phoebe",
-								   "Monica",
-								   "Carol");
-					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
-								   "Rachel",
-								   "Phoebe",
-								   "Monica",
-								   "Carol");
-					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
-								   "Rachel",
-								   "Phoebe",
-								   "Monica",
-								   "Carol");
-					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
-								   "Rachel",
-								   "Phoebe",
-								   "Monica",
-								   "Carol");
+								   "Ross",
+								   "Joey",
+								   "Rachel");
 					Collections.shuffle(questions); // Shuffle the list of questions
 					break;
 			
