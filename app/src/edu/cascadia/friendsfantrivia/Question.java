@@ -39,6 +39,14 @@ public class Question {
 	}
 	
 	/**
+	 * Get the correct answer String for this Question.
+	 * @return correct answer String
+	 */
+	public String getCorrectAnswer() {
+		return correctAnswer;
+	}
+	
+	/**
 	 * Get a shuffled list of possible answers for this Question.
 	 * @return a shuffled list of possible answers for this Question.
 	 */

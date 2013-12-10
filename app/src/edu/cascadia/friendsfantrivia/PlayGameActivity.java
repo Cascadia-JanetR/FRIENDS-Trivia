@@ -36,7 +36,6 @@ public class PlayGameActivity extends Activity {
 	private Animation shakeAnimation; // animation for incorrect guess
 	private Handler handler; // used to delay loading next question
 	private int soundID;
-	private Quiz correctAnswer;
 	
 	// UI variables
 	private TextView pointValueTextView; // TextView that displays the point value
@@ -211,8 +210,8 @@ public class PlayGameActivity extends Activity {
 		    answerButton.startAnimation(shakeAnimation);
 			// update the question progress icon (at bottom) - false means incorrect
 			updateQuestionProgressIcon(curQuestionNum, false);
-			
-			Toast.makeText(this,"The correct answer is" + this.correctAnswer, Toast.LENGTH_LONG).show();
+			// Show correct answer in a Toast popup
+			Toast.makeText(this,"The correct answer is " + curQuestion.getCorrectAnswer(), Toast.LENGTH_SHORT).show();
 			// No score added
 			// Continue game after 2-second delay
 			handler.postDelayed(
