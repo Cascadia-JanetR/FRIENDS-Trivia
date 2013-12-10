@@ -7,6 +7,8 @@
 package edu.cascadia.friendsfantrivia;
 
 import java.util.ArrayList;
+import java.util.Random;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -32,6 +34,7 @@ public class PlayGameActivity extends Activity {
 	private ArrayList<String> possibleAnswers; // the list of possible answers to curQuestion
 	private Animation shakeAnimation; // animation for incorrect guess
 	private Handler handler; // used to delay loading next question
+	private int soundID;
 	
 	// UI variables
 	private TextView pointValueTextView; // TextView that displays the point value
@@ -54,11 +57,10 @@ public class PlayGameActivity extends Activity {
 	private final int NUM_QUESTIONS = 5; // Number of questions per level
 	private final int NUM_LEVELS = 3; // Number of levels in the game
 	
-	// Constants and variables for managing sounds
-	private static final int INCORRECT_SOUND_ID = 0;
-	private static final int CORRECT_SOUND_ID = 1;
+	// Variables for managing sounds
 	private SoundPool soundPool; // plays sound effects
-	private SparseIntArray soundSparseIntArray; // maps IDs to SoundPool
+	private SparseIntArray goodSounds; // maps IDs for good sounds
+	private SparseIntArray badSounds; // maps IDs for bad sounds
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -114,14 +116,13 @@ public class PlayGameActivity extends Activity {
 	    // allow volume keys to set game volume
       	setVolumeControlStream(AudioManager.STREAM_MUSIC);
       	
-      	// initialize SoundPool to play the activity's two sound effects
+      	// initialize SoundPool to play the activity's sound effects
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
         
-        // create Map of sounds and pre-load sounds
-        //soundMap = new HashMap<Integer, Integer>(); // create new HashMap
-        soundSparseIntArray = new SparseIntArray(2); 
-        soundSparseIntArray.put(INCORRECT_SOUND_ID, soundPool.load(this, R.raw.janiceohmy, 1));
-        soundSparseIntArray.put(CORRECT_SOUND_ID, soundPool.load(this, R.raw.howdoing, 1));
+        // Pre-load the sound bytes for correct/incorrect answers
+        goodSounds = new SparseIntArray(); // create mapping array for good sounds
+        badSounds = new SparseIntArray(); // create mapping array for bad sounds
+        preLoadSounds(); // put all the good/bad sounds into each SparseIntArray
 		
 		// Load the first question
 		loadNextQuestion();
@@ -178,8 +179,10 @@ public class PlayGameActivity extends Activity {
 		if (curQuestion.isCorrectAnswer(answerText)) { // if answer is correct:
 			// Make answer button green
 			answerButton.setBackgroundColor(getResources().getColor(R.color.rightAnswerButtonColor));
+			// Get a random "correct" sound
+			soundID = getRandomAnswerSound(true);
 			// Play "correct" sound
-			soundPool.play(soundSparseIntArray.get(CORRECT_SOUND_ID), 1, 1, 1, 0, 1f);
+			soundPool.play(goodSounds.get(soundID), 1, 1, 1, 0, 1f);
 			curScore += getPointValue(curLevel); // add correct number of points
 			playerScoreTextView.setText("Score: " + curScore); // Update player's current score
 			// update the question progress icon (at bottom) - true means correct
@@ -198,11 +201,12 @@ public class PlayGameActivity extends Activity {
 		} else { // if answer is wrong:
 			// Make answer button green
 			answerButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswerButtonColor));
+			// Get a random "incorrect" sound
+			soundID = getRandomAnswerSound(false);
 			// play "incorrect" sound
-			soundPool.play(soundSparseIntArray.get(INCORRECT_SOUND_ID), 1, 1, 1, 0, 1f);
+			soundPool.play(badSounds.get(soundID), 1, 1, 1, 0, 1f);
 		    // play the shake animation on the button that was tapped
 		    answerButton.startAnimation(shakeAnimation);
-			
 			// update the question progress icon (at bottom) - false means incorrect
 			updateQuestionProgressIcon(curQuestionNum, false);
 			// No score added
@@ -324,6 +328,50 @@ public class PlayGameActivity extends Activity {
 					break;
 		}
 	}// end updateQuestionProgressIcon
+	
+	/**
+	 * Pre-load the answer sounds for the game
+	 */
+	public void preLoadSounds() {
+		// Pre-load the good sounds
+		goodSounds.put(0, soundPool.load(this, R.raw.howdoing, 1));
+		goodSounds.put(1, soundPool.load(this, R.raw.geek, 1));
+		goodSounds.put(2, soundPool.load(this, R.raw.howdoing2, 1));
+		goodSounds.put(3, soundPool.load(this, R.raw.irock, 1));
+		goodSounds.put(4, soundPool.load(this, R.raw.soparty, 1));
+		goodSounds.put(5, soundPool.load(this, R.raw.yeah, 1));
+		// Pre-load the bad sounds
+		badSounds.put(0, soundPool.load(this, R.raw.belikeyou, 1));
+		badSounds.put(1, soundPool.load(this, R.raw.bfbumer, 1));
+		badSounds.put(2, soundPool.load(this, R.raw.biteme, 1));
+		badSounds.put(3, soundPool.load(this, R.raw.janiceohmy, 1));
+		badSounds.put(4, soundPool.load(this, R.raw.nooooo, 1));
+		badSounds.put(5, soundPool.load(this, R.raw.ohmy, 1));
+		badSounds.put(6, soundPool.load(this, R.raw.ohno, 1));
+		badSounds.put(7, soundPool.load(this, R.raw.ohnonono, 1));
+		badSounds.put(8, soundPool.load(this, R.raw.shutupmom, 1));
+		badSounds.put(9, soundPool.load(this, R.raw.sosad, 1));
+		badSounds.put(10, soundPool.load(this, R.raw.stupid, 1));
+		badSounds.put(11, soundPool.load(this, R.raw.whatdone, 1));
+	}
+	
+	/**
+	 * Gets a random sound to play upon answering a question. Returns a reference
+	 * to a "good" sound if the answer was correct, or a "bad" sound if the answer
+	 * was incorrect
+	 * @param correct - Was the answer correct?
+	 * @return - An random reference to the sound byte to play
+	 */
+	public int getRandomAnswerSound(boolean correct) {
+		Random random = new Random(); // random number generator
+		if (correct) { // answer correct - return good sound key
+			// return random key between 0 (inclusive) and goodSounds.size() (exclusive)
+			return random.nextInt(goodSounds.size());
+		} else { // answer not correct - return bad sound key
+			// return random key between 0 (inclusive) and badSounds.size() (exclusive)
+			return random.nextInt(badSounds.size());
+		}
+	}
 
 //  No menu for right now
 //	@Override
