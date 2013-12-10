@@ -22,6 +22,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PlayGameActivity extends Activity {
 	
@@ -209,6 +210,8 @@ public class PlayGameActivity extends Activity {
 		    answerButton.startAnimation(shakeAnimation);
 			// update the question progress icon (at bottom) - false means incorrect
 			updateQuestionProgressIcon(curQuestionNum, false);
+			
+			Toast.makeText(this,"The correct answer is", Toast.LENGTH_LONG).show();
 			// No score added
 			// Continue game after 2-second delay
 			handler.postDelayed(
