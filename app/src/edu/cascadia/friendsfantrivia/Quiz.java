@@ -41,11 +41,11 @@ public class Quiz {
 								   "3",
 								   "1",
 								   "0");
-					addNewQuestion("Why can't Chandler dance at his wedding?",
-								   "His shoes are too slippery",
-								   "He doesn't know how",
-								   "No dance partner",
-								   "He didn't like the music");
+					addNewQuestion("What is the name of the dog that Phoebe dog sat for?",
+								   "Clunkers",
+								   "Charlie",
+								   "Bruno",
+								   "Fluffers");
 					addNewQuestion("Whose pants does Joey wear as eating pants?",
 								   "Phoebe's",
 								   "Ross's",
@@ -90,16 +90,16 @@ public class Quiz {
 								   "Emily",
 								   "Rachel",
 								   "Julie");
-					addNewQuestion("Who is Ross's second wife?",
-								   "Emily",
-								   "Carol",
-								   "Rachel",
-								   "Julie");
-					addNewQuestion("How many times has Ross been divorced?",
-								   "3 times",
-								   "2 times",
-								   "4 times",
-								   "1 time");
+					addNewQuestion("Which volume of the encyclopedia did Joey purchase?",
+								   "V",
+								   "A",
+								   "S",
+								   "J");
+					addNewQuestion("What was Emma's first word?",
+								   "Gleeba",
+								   "Fungi",
+								   "Sleepa",
+								   "Breea");
 					addNewQuestion("What game show does Joey audition to be the host of?",
 								   "Bamboozled",
 								   "Fireball",
@@ -110,11 +110,11 @@ public class Quiz {
 								   "Mr. Chandler Bing",
 								   "Joey Tribbani",
 								   "Monica Gellar");
-					addNewQuestion("Who did Ross date at the beginning of season 2?",
-								   "Juile",
-								   "Susan",
-								   "Rachel",
-								   "Phoebe");
+					addNewQuestion("How many states does Joey come up with in the One Where Chandler Doesn't Like Dogs?",
+								   "56",
+								   "42",
+								   "45",
+								   "51");
 					addNewQuestion("Who is Rosita?",
 								   "Joey's Recliner",
 								   "Joey's TV",
@@ -139,11 +139,11 @@ public class Quiz {
 					break;
 				
 			// If current level is 3, add 5 level-three questions:
-			case 3: addNewQuestion("In ten seasons, who didn't live in Monica's apartment?",
-								   "Ross",
-								   "Phoebe",
-								   "Chandler",
-								   "Joey");
+			case 3: addNewQuestion("Who is Monica's date for prom?",
+								   "Roy Goblick",
+								   "Steve Kelly",
+								   "Chris Waters",
+								   "Rick Zimmerman");
 					addNewQuestion("What Soap Opera does Joey star on?",
 								   "Days of Our Lives",
 								   "Young and the Restless",
@@ -154,11 +154,11 @@ public class Quiz {
 								   "Bloomingdales",
 								   "Ralph Lauren",
 								   "Gucci");
-					addNewQuestion("How many times does Chandler propose to Monica?",
-								   "2 times",
-								   "1 time",
-								   "3 times",
-								   "0");
+					addNewQuestion("Who is Rachel's date for Prom?",
+								   "Chip Matthews",
+								   "Charles Dorty",
+								   "Chris Waters",
+								   "Charlie Finn");
 					addNewQuestion("In who's yearbook is written Sorry about your teeny weenie?",
 								   "Rachel",
 								   "Phoebe",
@@ -179,11 +179,11 @@ public class Quiz {
 								   "Free Massages",
 								   "Plane Tickets",
 								   "Trip to London");
-					addNewQuestion("How is Joey's character killed off in the soap?",
-								   "Fell down an Elevator Shaft",
-								   "Heart Attack",
-								   "Brain Tumor",
-								   "Train Accident");
+					addNewQuestion("Who did Phoebe claim to be the father of her baby?",
+								   "James Brolin",
+								   "Brad Pitt",
+								   "Tony Danza",
+								   "Hank Azaria");
 					addNewQuestion("Who wins Rock, Paper, Scissors in the One with the Late Thanksgiving?",
 								   "Phoebe",
 								   "Ross",
